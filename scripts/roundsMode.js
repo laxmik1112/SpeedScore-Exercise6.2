@@ -236,12 +236,17 @@ function deleteRound(roundId) {
     });
 }
 function confirmDelete(roundId) {
-  //TO DO: Present modal dialog prompting user to confirm delete
-  //Return true if user confirms delete, false otherwise
+  //Present modal dialog prompting user to confirm delete
   let modal = new bootstrap.Modal(
       document.getElementById("confirmDeleteRoundModal")
   );
   let confirmBtn = document.getElementById("confirmDeleteBtn");
+  
+  // Remove any existing event listeners
+  confirmBtn.replaceWith(confirmBtn.cloneNode(true));
+  confirmBtn = document.getElementById("confirmDeleteBtn");
+  
+  // Add one-time event listener
   confirmBtn.addEventListener("click", function (event) {
       event.preventDefault();
       console.log("deleting round with id " + roundId);
