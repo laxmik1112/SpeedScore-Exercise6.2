@@ -184,7 +184,7 @@ function createAccount() {
     let securityAnswerValid = !GlobalAcctSecurityAnswerField.validity.tooShort &&
                               !GlobalAcctSecurityAnswerField.validity.valueMissing;
     if (emailValid && passwordValid && repeatPasswordValid &&
-        displayNameValid && securityQuestionValid & securityAnswerValid) { 
+        displayNameValid && securityQuestionValid && securityAnswerValid) { 
         //All is well -- Call createAccount()
        createAccount();
        return;
