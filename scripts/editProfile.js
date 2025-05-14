@@ -231,7 +231,7 @@
     let securityAnswerValid = !GlobalProfileSecurityAnswerField.validity.tooShort &&
                                 !GlobalProfileSecurityAnswerField.validity.valueMissing;
     if (emailValid && displayNameValid && 
-        securityQuestionValid & securityAnswerValid) { 
+        securityQuestionValid && securityAnswerValid) { 
         //All is well -- Call updateProfile()
         updateProfile();
         return;
