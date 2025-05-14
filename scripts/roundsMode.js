@@ -223,6 +223,18 @@ writeRoundToTable(thisRound,rowIndex);
  * @param roundId -- the unique id of the round to be deleted
  * @returns -- true if user confirms delete, false otherwise
  *************************************************************************/
+/*************************************************************************
+ * @function deleteRound
+ * @desc
+ * Deletes a round from the "Rounds" table and from local storage
+ * @param roundId -- the unique id of the round to be deleted
+ * @returns -- true if round could be deleted, false otherwise
+ *************************************************************************/
+function deleteRound(roundId) {
+    GlobalUserData.rounds = GlobalUserData.rounds.filter(function (round) {
+        return round.roundNum !== roundId;
+    });
+}
 function confirmDelete(roundId) {
   //TO DO: Present modal dialog prompting user to confirm delete
   //Return true if user confirms delete, false otherwise
